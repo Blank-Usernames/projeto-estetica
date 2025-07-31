@@ -46,3 +46,37 @@ Criar um sistema web/mobile de agendamento e controle de clientes e processos pa
 
 **Imposto:** R$40,00 * 1,15 = R$46,00
 
+## Tarefas
+
+|    A Fazer     |        Fazendo         |        Feito          |
+|----------------|------------------------|-----------------------|
+| [ ] Montar CTA | [W] Montar Wireframe   |[D] Montar Orçamento   |  
+|                |                        |[D] Montar Contrato    |
+
+
+## Leads
+
+Landing Page com captação de Leads - R$ 1200,00 à R$ 3500,00
+
+São campos onde os clientes se cadastram para receber descontos, novidades, etc.
+
+## Definir a tecnologia do sistema
+
+- Sistema Web R$ 8.000,00 | App Android / iOS R$ 45.000,00
+- HTML + CSS + JS | Frameworks (REACT.js / Bulma / Bootstrap)
+- PHP + SQL R$ 10,00 | Python com Flask R$ 60,00
+- MySQL | PostgreSQL | Oracle | DBII
+
+## Comandos Docker Compose
+
+`docker compose up -d --build` - Criar e Iniciar os containers <hr>
+`docker ps` - Listar containers ativos <hr>
+`docker stop (numeroContainer)` - Desativar container existente <hr>
+`docker rm (numeroContainer)` - Deleta o container (e seus dados)<hr>
+
+## Algoritmo - Coleta de e-mails (Leads)
+
+- Preencha o campo e-mail (obrigatório)
+- Confirmar a aceitação dos Termos & Condições (obrigatório)
+- Envia os dados para o PHP
+- PHP cadastra no Database (banco de dados)

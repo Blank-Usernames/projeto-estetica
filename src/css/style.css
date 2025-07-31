@@ -1,0 +1,69 @@
+/*----------------------------------------
+    CSS Mobile - Projeto Estética
+----------------------------------------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Reset Rules */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto',Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+/* Imagens Responsivas */
+img {
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Esconder Elementos */
+.hide {
+    display: none;
+}
+
+/* Formulário de Novidades */
+#cadastro_news {
+    background: #e6e5e5;
+    padding: 1rem;
+    position: relative;
+}
+
+#cadastro_news h2 {
+    text-align: center;
+    font-weight: medium;
+    font-size: 1.5rem;
+    line-height: 120%;
+    margin-bottom: 1rem;
+}
+
+#cadastro_news input[type=email] {
+    display: block;
+    border-radius: 5px;
+    border: solid 0.01rem black;
+    font-size: 1rem;
+    padding: 1rem;
+    width: 85vw;
+    height: 3rem;
+    margin: 0 auto;
+}
+
+#cadastro_news button {
+    display: flex;
+    align-items: center;
+    padding: 0.7rem 1rem;
+    position: absolute;
+    bottom: 4.3rem;
+    right: 7.8vw;
+}
+
+#cadastro_news label[for=inputTermos] {
+    display: inline-block;
+    font-size: 0.9em;
+    width: 90%;
+    margin-left: 1rem;
+    padding-top: 1rem;
+}

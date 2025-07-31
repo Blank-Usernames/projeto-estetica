@@ -1,0 +1,28 @@
+# Configurações para o Docker
+# Monta os serviços (containers)
+
+services:
+  web:
+    image: php:8.2-apache
+    ports:
+      - 5000:80
+    volumes:
+      - ./src:/var/www/html
+
+  db:
+    image: mysql:8 # imagem do docker hub escolhida
+    platform: linux/x86_64 # SO escolhido para o banco
+    restart: unless-stopped # serviço sempre reiniciado
+    container_name: estetica_db # nome do serviço
+    environment:
+        MYSQL_DATABASE: estetica_t99
+        MYSQL_ROOT_PASSWORD: root
+        MYSQL_PASSWORD: senac@123
+        MYSQL_USER: t99
+    volumes: # pastas espelhadas no container
+        - mysql:/var/lib/mysql
+    ports: # portas de acesso
+        - "3308:3306"
+
+volumes:
+  mysql: 
