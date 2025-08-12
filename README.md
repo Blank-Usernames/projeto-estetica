@@ -70,9 +70,16 @@ São campos onde os clientes se cadastram para receber descontos, novidades, etc
 ## Comandos Docker Compose
 
 `docker compose up -d --build` - Criar e Iniciar os containers <hr>
-`docker ps` - Listar containers ativos <hr>
+`docker compose down` - Desligar containers
+`docker ps -a` - Listar containers ativos <hr>
 `docker stop (numeroContainer)` - Desativar container existente <hr>
-`docker rm (numeroContainer)` - Deleta o container (e seus dados)<hr>
+`docker rm (numeroContainer)` - Deleta o container (e seus dados) <hr>
+`docker compose run (nome/ID bash)` - Acessar o terminal de um container <hr>
+
+* Comandos do Composer
+
+`docker compose exec web composer --version` - Testando Composer <hr>
+`docker compose exec web composer create-project laravel/laravel /var/www/html/application` - Criando projeto Laravel
 
 ## Algoritmo - Coleta de e-mails (Leads)
 

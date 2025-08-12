@@ -1,0 +1,20 @@
+# Configurações de instalação do Servidor Apache
+FROM php:8.2-apache
+
+# Instala dependências necessárias
+RUN apt update -y && apt upgrade \
+git \
+unzip \
+curl \
+zip 
+
+# Instala o Composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+# Instalação de extensões PHP necessárias
+RUN docker-php-ext-install pdo pdo_mysql
+
+# Permissão para o usuário externo
+
+# Define o diretório raiz da aplicação
+WORKDIR /var/www/html

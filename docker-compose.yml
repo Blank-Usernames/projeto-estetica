@@ -4,10 +4,15 @@
 services:
   web:
     image: php:8.2-apache
+    build:
+      context: ./web
+      dockerfile: ./Dockerfile.laravel
     ports:
       - 5000:80
+    user: "${UID}:${GID}"
     volumes:
-      - ./src:/var/www/html
+      - ./application:/var/www/html/application
+      - ./src:/var/www/html/src
 
   db:
     image: mysql:8 # imagem do docker hub escolhida
@@ -38,12 +43,12 @@ services:
 
   # Container para testes de segurança https://127.0.0.1:7443/WebGoat
   # usuario e senha: guest
-  webgoat:
-    image: webgoat/webgoat
-    container_name: webgoat
-    restart: unless-stopped
-    ports:
-      - "7443:8080"
+  # webgoat:
+  #   image: webgoat/webgoat
+  #   container_name: webgoat
+  #   restart: unless-stopped
+  #   ports:
+  #     - "7443:8080"
 
 volumes:
   mysql: 
