@@ -5,11 +5,10 @@ services:
   web:
     image: php:8.2-apache
     build:
-      context: ./web
-      dockerfile: ./Dockerfile.laravel
+      context: .
+      dockerfile: ./web/Dockerfile.laravel
     ports:
       - 5000:80
-    user: "${UID}:${GID}"
     volumes:
       - ./application:/var/www/html/application
       - ./src:/var/www/html/src
