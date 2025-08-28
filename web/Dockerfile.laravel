@@ -28,4 +28,4 @@ RUN docker-php-ext-install pdo pdo_mysql
 # Permissão para o usuário externo
 
 # Define o diretório raiz da aplicação
-WORKDIR /var/www/html/
+WORKDIR /var/www/html/application

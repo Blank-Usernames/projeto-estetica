@@ -7,6 +7,7 @@ services:
     build:
       context: .
       dockerfile: ./web/Dockerfile.laravel
+    working_dir: /var/www/html/application/
     ports:
       - 5000:80
     volumes:

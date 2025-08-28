@@ -1,102 +1,153 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">  
-    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+<!-- Importando o template via Blade -->
+@extends('_template_frontend')
 
-    <style>
-        :root {
-            --corText: #333;
-            --bs-primary-rgb: 255,255,255;
-            --bs-secondary-rgb: 198,147,248; /* 64,198,219 */
-            --bs-light-rgb: 255,255,255;
-            --bs-dark-rgb: 121,32,176;
-        }
+<!-- Direcionando para a área de contéudo -->
+@section('conteudos')
 
-        * {
-            box-sizing: border-box;
-            max-width: 100%;
-        }
-
-        img {
-            width: 100%;
-            max-width: 100%;
-        }
-
-        .conteudos {
-            background-color: rgba(var(--bs-secondary-rgb),0.4) !important; 
-            width: calc( (100% / 12 * 10) - 1rem);
-            box-shadow: inset 0 0 1rem rgba(255,255,255,0.4);
-            border: solid 0.1rem rgba(var(--bs-secondary-rgb), 1);
-        }
-
-        .menu_lateral {
-            max-width: 10rem;
-        }
-
-        @media screen and (max-width: 576px) {
-            .menu_lateral img {
-               display: flex;
-               justify-content: start;
-            }
-
-            .btn_menu {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                padding: 0.1rem 0.2rem;
-                aspect-ratio: 1; /* Define height e width para o mesmo tamanho (quadrado) */
-            }
-
-            .abre {
-                
-            }
-        }
-    </style>
-</head>
-<body>
-    <main class="bg-primary p-3 d-flex flex-row" style="height: 100vh;">
-        <section class="col-1 col-md-3 gnavbar navbar-expand d-flex flex-column bg-light rounded-1 overflow-hidden menu_lateral" id="menuLateral">
-
-            <button class="btn btn-outline-dark d-block d-md-none btn_menu" id="btnMenu">
-                    <span class="navbar-toggler-icon"></span>
-            </button>
-            
-            <!-- Navbrand -->
-            <h1 class="container-fluid">
-                <a class="navbar-brand" href="{{config('app.url')}}">
-                    <img class="col-12" src="https://placehold.co/1920x1080?text=Logo"  alt="Logotipo">
+<!-- Main -->
+<div id="main">
+    <div class="inner">
+        <header>
+            <h1>This is Phantom, a free, fully responsive site<br />
+            template designed by <a href="http://html5up.net">HTML5 UP</a>.</h1>
+            <p>Etiam quis viverra lorem, in semper lorem. Sed nisl arcu euismod sit amet nisi euismod sed cursus arcu elementum ipsum arcu vivamus quis venenatis orci lorem ipsum et magna feugiat veroeros aliquam. Lorem ipsum dolor sit amet nullam dolore.</p>
+        </header>
+        <section class="tiles">
+            <article class="style1">
+                <span class="image">
+                    <img src="images/pic01.jpg" alt="" />
+                </span>
+                <a href="generic.html">
+                    <h2>Magna</h2>
+                    <div class="content">
+                        <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                    </div>
                 </a>
-            </h1>
-
-            <nav class="w-100">
-                <a class="nav-link w-100 p-2 mb-2" href="{{config('app.url')}}"><span class="h4 ms-md-3 fw-normal"><i class="bi bi-speedometer2 pe-3"></span></i><span class="d-none d-md-inline-block">Painel</span></a>
-                <a class="nav-link w-100 p-2 mb-2 " href="{{config('app.url')}}"><span class="h4 ms-md-3 fw-normal"><i class="bi bi-person-circle pe-3"></span></i><span class="d-none d-md-inline-block">Usuários</span></a>
-                <a class="nav-link w-100 p-2 mb-2" href="{{config('app.url')}}"><span class="h4 ms-md-3 fw-normal"><i class="bi bi-newspaper pe-3"></span></i><span class="d-none d-md-inline-block">Novidades</span></a>   
-            </nav>
+            </article>
+            <article class="style2">
+                <span class="image">
+                    <img src="images/pic02.jpg" alt="" />
+                </span>
+                <a href="generic.html">
+                    <h2>Lorem</h2>
+                    <div class="content">
+                        <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                    </div>
+                </a>
+            </article>
+            <article class="style3">
+                <span class="image">
+                    <img src="images/pic03.jpg" alt="" />
+                </span>
+                <a href="generic.html">
+                    <h2>Feugiat</h2>
+                    <div class="content">
+                        <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                    </div>
+                </a>
+            </article>
+            <article class="style4">
+                <span class="image">
+                    <img src="images/pic04.jpg" alt="" />
+                </span>
+                <a href="generic.html">
+                    <h2>Tempus</h2>
+                    <div class="content">
+                        <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                    </div>
+                </a>
+            </article>
+            <article class="style5">
+                <span class="image">
+                    <img src="images/pic05.jpg" alt="" />
+                </span>
+                <a href="generic.html">
+                    <h2>Aliquam</h2>
+                    <div class="content">
+                        <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                    </div>
+                </a>
+            </article>
+            <article class="style6">
+                <span class="image">
+                    <img src="images/pic06.jpg" alt="" />
+                </span>
+                <a href="generic.html">
+                    <h2>Veroeros</h2>
+                    <div class="content">
+                        <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                    </div>
+                </a>
+            </article>
+            <article class="style2">
+                <span class="image">
+                    <img src="images/pic07.jpg" alt="" />
+                </span>
+                <a href="generic.html">
+                    <h2>Ipsum</h2>
+                    <div class="content">
+                        <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                    </div>
+                </a>
+            </article>
+            <article class="style3">
+                <span class="image">
+                    <img src="images/pic08.jpg" alt="" />
+                </span>
+                <a href="generic.html">
+                    <h2>Dolor</h2>
+                    <div class="content">
+                        <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                    </div>
+                </a>
+            </article>
+            <article class="style1">
+                <span class="image">
+                    <img src="images/pic09.jpg" alt="" />
+                </span>
+                <a href="generic.html">
+                    <h2>Nullam</h2>
+                    <div class="content">
+                        <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                    </div>
+                </a>
+            </article>
+            <article class="style5">
+                <span class="image">
+                    <img src="images/pic10.jpg" alt="" />
+                </span>
+                <a href="generic.html">
+                    <h2>Ultricies</h2>
+                    <div class="content">
+                        <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                    </div>
+                </a>
+            </article>
+            <article class="style6">
+                <span class="image">
+                    <img src="images/pic11.jpg" alt="" />
+                </span>
+                <a href="generic.html">
+                    <h2>Dictum</h2>
+                    <div class="content">
+                        <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                    </div>
+                </a>
+            </article>
+            <article class="style4">
+                <span class="image">
+                    <img src="images/pic12.jpg" alt="" />
+                </span>
+                <a href="generic.html">
+                    <h2>Pretium</h2>
+                    <div class="content">
+                        <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                    </div>
+                </a>
+            </article>
         </section>
+    </div>
+</div>
 
-        <section class="col-10 bg-secondary ms-3 rounded-1 conteudos"></section> 
-    </main>
-</body>
-
-<script type="text/javascript">
-    document.addEventListener('DOMContentLoaded', function(){
-
-        // Pegar o botão do menu
-        let menuBtn = document.querySelector('#btnMenu');
-
-        // Observar o clique
-        menuBtn.addEventListener('click', function(){
-            document.querySelector("#menuLateral").classList.toggle('');
-        });
-    });
-
-
-
-</script>
-</html>
+<!-- Encerrando a seção de conteúdo -->
+@endsection

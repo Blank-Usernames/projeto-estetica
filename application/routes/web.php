@@ -4,11 +4,18 @@
 use Illuminate\Support\Facades\Route;
 
 # Define uma rota (URL)
-Route::get('/', function () {
-    return view('home');
+Route::get('/', function() {
+    return view('home'); # ou redirect('/rota')
 });
 
 Route::get('/painel', function() {
-    return "<h1>Home</h1>";
- 
+    return view('painel');
+});
+
+Route::get('/sobre', function() {
+    return view('sobre');
+});
+
+Route::get('/novidades', function() {
+    return view('novidades');
 });
