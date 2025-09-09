@@ -2,6 +2,7 @@
 
 # Importações de classes do Laravel
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\NovidadesController;
 
 # Define uma rota (URL)
 Route::get('/', function() {
@@ -18,4 +19,9 @@ Route::get('/sobre', function() {
 
 Route::get('/novidades', function() {
     return view('novidades');
-});
+})->name("novidades");
+
+# Rota que utiliza o método 'store' para cadastrar dados
+Route::post('/novidades', [NovidadesController::class, 'store'])->name("novidades");
+
+Route::get('dev/faker', [NovidadesController::class, 'dummyData']);
