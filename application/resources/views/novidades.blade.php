@@ -2,6 +2,12 @@
 
 @section ('conteudos')
 
+{{dd($dados)}}
+
+@php
+var_dump($dados);
+@endphp
+
 <h2>Cadastro de Novidades</h2>
 
 <form action="{{route('novidades')}}" method="POST" class="d-flex">

@@ -1,8 +1,29 @@
 <?php
+/*
+CRUD - Operação de manutenção de uma tabela
+
+Métodos de CRUD no ORM Eloquent (ORM - Object Relational Model)
+
+Create - INSERT
+    - create() - Cadastra os dados
+    - save() - Salva (opcional)
+    - firstOrCreate() - Cria 'if not exists'
+    - updateOrCreate() - Cria ou atualiza 'if exists'
+Read - SELECT
+    - all() - Traz todos os registros da tabela
+    - find() - Traz um registro pelo ID (PK)
+    - findOrFail() - If (erro = true) {mostrarErro = false} else {executar = true}
+    - first() - Traz apenas o primeiro registro cadastrado
+    - firstOrFail() - If (erro = true) {mostrarErro = false} else {executar = true}
+    - where() - Traz todos os registros filtrados
+    - get() - Organiza os dados em um objeto do Eloquent
+
+*/
+
 
 namespace App\Http\Controllers;
 
-use App\Models\Novidades;
+use App\Models\Novidades; # Conecta ao Banco de Dados
 use Illuminate\Http\Request;
 use Faker\Factory as Faker;
 
@@ -40,11 +61,40 @@ class NovidadesController extends Controller
     }
 
     /**
-     * Display a listing of the resource.
+     * Display a listing of the resource. 
      */
     public function index()
     {
-        //
+        # Buscar todos os dados da tabela
+        $todos = Novidades::all();
+
+        # Busca a Primary Key (ID)
+        //$unico = Novidades::find(1);
+
+        # Busca de acordo com a filtragem
+        //$filtrado = Novidades::where('email','like', 'm%')->get();
+
+        # Dump and Die - Exibe tudo o que há na variável e interrompe a execução do sistema
+        //dd($unico);
+
+        # Dump legível no PHP
+        //echo "<pre>";
+        //print_r($filtrado);
+        //echo "</pre>";
+        //die();
+
+        /* 
+        return:
+            - return "Texto";
+            - return "<h1>Hello World!</h1>;
+            - return redirect('www.youtube.com');
+            - return view('arquivo');
+            - return route('rota')
+        
+        */
+
+        # Redirecionando para a rota passando os valores buscados
+        return redirect()->route('novidades',['dados'=>$todos]); 
     }
 
     /**

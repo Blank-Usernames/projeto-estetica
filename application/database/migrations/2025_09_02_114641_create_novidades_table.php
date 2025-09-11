@@ -17,7 +17,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('novidades', function (Blueprint $table) {
-            $table->id('id_news'); # Primary Key (NOT NULL por default)
+            $table->id('id'); # Primary Key (NOT NULL por default)
             $table->string('email', 254)->unique;
             $table->integer('validado')->default(0);
             $table->enum('opt_out',['sim','não'])->default('sim');

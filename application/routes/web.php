@@ -22,6 +22,6 @@ Route::get('/novidades', function() {
 })->name("novidades");
 
 # Rota que utiliza o método 'store' para cadastrar dados
-Route::post('/novidades', [NovidadesController::class, 'store'])->name("novidades");
+Route::post('/novidades', [NovidadesController::class, 'index'])->name("novidades");
 
 Route::get('dev/faker', [NovidadesController::class, 'dummyData']);
